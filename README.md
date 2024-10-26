@@ -20,10 +20,10 @@ This application had three main focus objectives:</p>
 	    Users had a field to write their name, email, title of post and text content. After submiting the post, it would save in our Recycle View, and it would show bellow (you could also scroll throw it).
   </li>
 </ul>
-
 <p>Regarding specifications, this application had five activities, two recycle views (two adapters), three models, and some icons from the Android studio.</p>
-![1](https://github.com/user-attachments/assets/ee292101-a9c9-4e13-9204-6e3e2717b289)
-![2](https://github.com/user-attachments/assets/fa7a0ab5-7431-4671-a694-54af55e73715)
-![3](https://github.com/user-attachments/assets/2c679dde-b786-47fa-8d28-f2a04b728128)
-![5](https://github.com/user-attachments/assets/e8d90f7a-aa18-44e6-8188-f2141436944d)
-![4](https://github.com/user-attachments/assets/96bbbbf7-81ad-4fe9-b673-440fa53da91f)
+
+![1](https://github.com/user-attachments/assets/dde0ba7c-1998-41f4-ac89-94dbd903480c)
+![2](https://github.com/user-attachments/assets/26c367aa-7f88-41d0-be0a-8555456b8fbd)
+![3](https://github.com/user-attachments/assets/9645bd09-aa18-4fbf-a7c7-39e2b6cd630a)
+![5](https://github.com/user-attachments/assets/46e40bfe-ed07-4401-9ff2-fd1cbc7f463b)
+![4](https://github.com/user-attachments/assets/d913aae0-bb41-413b-a2f9-9f9424a715a9)
