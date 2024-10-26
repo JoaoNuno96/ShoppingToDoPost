@@ -22,8 +22,4 @@ This application had three main focus objectives:</p>
 </ul>
 <p>Regarding specifications, this application had five activities, two recycle views (two adapters), three models, and some icons from the Android studio.</p>
 
-![1](https://github.com/user-attachments/assets/dde0ba7c-1998-41f4-ac89-94dbd903480c)
-![2](https://github.com/user-attachments/assets/26c367aa-7f88-41d0-be0a-8555456b8fbd)
-![3](https://github.com/user-attachments/assets/9645bd09-aa18-4fbf-a7c7-39e2b6cd630a)
-![5](https://github.com/user-attachments/assets/46e40bfe-ed07-4401-9ff2-fd1cbc7f463b)
-![4](https://github.com/user-attachments/assets/d913aae0-bb41-413b-a2f9-9f9424a715a9)
+![final](https://github.com/user-attachments/assets/38120641-6db7-4094-919e-baf7cc29f430)
