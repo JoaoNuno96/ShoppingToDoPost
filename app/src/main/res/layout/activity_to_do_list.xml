@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Melon"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:theme="@style/ThemeOverlay.ListaCompras.FullscreenContainer"
+    tools:context=".views.ToDoListActivity">
+
+    <!-- BATERIAS -->
+    <ImageView
+        android:id="@+id/bateria0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_0"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_1"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_2"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_3"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_4"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_5"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_6"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/bateria7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bateria_7"
+        android:visibility="gone"
+        android:rotation="90"
+        />
+
+    <!-- BARRA INICIAL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- LINEAR LAYOUT DO RELOGIO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="ss"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"
+                android:textSize="15dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end|center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Nivel de Bateria:"
+
+                    />
+
+                <TextView
+                    android:id="@+id/nivelBateria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/MintGreen"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="30dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <!-- LINEAR LAYOUT TITULO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lista de Tarefas"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lista"
+            android:textColor="@color/RaspberryRose"
+            android:background="@color/Melon"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            />
+
+        <ListView
+            android:id="@+id/listaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white" />
+
+
+    </LinearLayout>
+
+    <!-- LINER LAYOUT BOTAO DE CIMA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/botaoAparecer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/botao_em_cima"
+            android:background="@color/Melon"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:focusable="true"
+            android:clickable="true"
+            />
+
+    </LinearLayout>
+
+    <!--Layout de ediçao -->
+    android:translationY="500dp"
+    <LinearLayout
+        android:id="@+id/linearSubir"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/RaspberryRose"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/botaoDesaparecer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/botao_em_baixo"
+            android:background="@color/RaspberryRose"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:focusable="true"
+            android:clickable="true"
+
+            />
+        <!--LINHA 1 - ADICIONAR-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <EditText
+                android:id="@+id/novaTarefa"
+                android:padding="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Nova Tarefa"
+                android:textColorHint="@color/Melon"
+                android:backgroundTint="@color/Melon"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                >
+
+                <Button
+                    android:id="@+id/adicionarTarefa"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/Melon"
+                    android:textColor="@color/RaspberryRose"
+                    android:text="Adicionar"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--LINHA 2 - REMOVER-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/tarefaParaRemover"
+                android:padding="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Remover Tarefa"
+                android:backgroundTint="@color/Melon"
+                android:layout_marginEnd="5dp"
+                android:textColorHint="@color/Melon"
+                android:textColorHighlight="@color/Melon"
+                />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                >
+
+                <Button
+                    android:id="@+id/removerTarefa"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/Melon"
+                    android:textColor="@color/RaspberryRose"
+                    android:text="Remover"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

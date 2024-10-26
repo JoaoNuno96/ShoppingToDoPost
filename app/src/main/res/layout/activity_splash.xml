@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/RaspberryRose"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.SplashActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:rotation="30"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Shopping-ToDo-Post"
+        android:textColor="@color/MintGreen"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        />
+    <TextView
+        android:id="@+id/Details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/MintGreen"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="This is you number 1# Shopping list, To-Do list application and Post application "
+
+        android:textSize="16dp"
+        />
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/Melon"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.PostLayoutActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/RaspberryRose"
+            android:text="Formulário de Publicações"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorHighlight="@color/white"
+                android:layout_marginTop="20dp"
+                android:hint="Digite Seu Nome"
+                />
+
+            <EditText
+                android:id="@+id/userEmail"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorHighlight="@color/white"
+                android:layout_marginTop="20dp"
+                android:hint="Digite Seu Email"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/userTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorHighlight="@color/white"
+                android:hint="Digite o Titulo da Publicação"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/postText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="text|textMultiLine"
+                android:gravity="top"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorHighlight="@color/white"
+                android:hint="Escreve o conteudo da publicação aqui"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/register_post_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/RaspberryRose"
+                android:text="Registar Publicação"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/RaspberryRose"
+            android:layout_marginTop="30dp"
+            android:text="Post"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+
+
+
+</LinearLayout>
