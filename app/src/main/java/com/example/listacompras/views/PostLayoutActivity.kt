@@ -7,7 +7,9 @@ import com.example.listacompras.adapter.PostListAdatper
 import com.example.listacompras.databinding.ActivityPostLayoutBinding
 import com.example.listacompras.model.Post
 
+
 class PostLayoutActivity : AppCompatActivity() {
+
 
     public var listaPost : ArrayList<Post> = ArrayList<Post>();
 
@@ -30,8 +32,10 @@ class PostLayoutActivity : AppCompatActivity() {
 
             listaPost.add(post);
 
-            binding.postRecycleView.layoutManager = LinearLayoutManager(this);
+            //HORIZONTAL
+            binding.postRecycleView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
             binding.postRecycleView.adapter = PostListAdatper(listaPost);
+
 
             binding.userName.setText("");
             binding.userEmail.setText("");

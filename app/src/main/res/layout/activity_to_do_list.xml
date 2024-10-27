@@ -245,10 +245,10 @@
     </LinearLayout>
 
     <!--Layout de ediçao -->
-    android:translationY="500dp"
+
     <LinearLayout
         android:id="@+id/linearSubir"
-
+        android:translationY="500dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
