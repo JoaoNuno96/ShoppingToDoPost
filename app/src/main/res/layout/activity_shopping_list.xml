@@ -76,6 +76,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/lista_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -85,6 +86,15 @@
         android:textStyle="bold"
         android:gravity="center"
         android:text="List Preview"
+        />
+
+    <Button
+        android:id="@+id/carregar_db"
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/RaspberryRose"
+        android:text="Recarregar"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -97,6 +107,22 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         />
+
+    <TextView
+        android:id="@+id/exemplo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text=""
+        />
+
+
+
 
 
 
