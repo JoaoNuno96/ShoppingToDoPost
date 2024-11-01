@@ -27,10 +27,6 @@ class ShoppingListActivity : AppCompatActivity() {
     }
 
     public var lista = ArrayList<ShoppingItem>();
-    public var listaExemplo : ArrayList<String> = ArrayList<String>();
-
-    public val shoppingItem : ShoppingItem? = null;
-    public var flagVariable = false;
     public var recover : Map<String,Any>? = null;
     public var count = 1;
 
@@ -38,13 +34,21 @@ class ShoppingListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
 
+        val userId = auth.currentUser?.uid;
         loadData();
+
+        binding.carregarDb.setOnClickListener {
+
+            val uId = auth.currentUser?.uid.toString();
+
+            binding.exemplo.text = uId;
+            db.collection(uId).document("joao");
+
+        }
 
         binding.botaoAdicionar.setOnClickListener {
 
             val adicionarItem = binding.textoAdicionar.text.toString();
-
-            val userId = auth.currentUser?.uid;
 
             adicionarItems(adicionarItem,userId.toString());
 
@@ -55,7 +59,7 @@ class ShoppingListActivity : AppCompatActivity() {
 
             val removerIndex = binding.textoRemover.text.toString().toInt();
 
-            removerItem(removerIndex);
+            removerItem(removerIndex,userId.toString());
 
             binding.textoRemover.setText("");
         }
@@ -73,7 +77,14 @@ class ShoppingListActivity : AppCompatActivity() {
             shop_item.id.toString() to shop_item.nome
         );
 
-        db.collection(userId).document("listaTarefas").update(data);
+        if(lista.size == 1)
+        {
+            db.collection(userId).document("listaTarefas").set(data);
+        }
+        else
+        {
+            db.collection(userId).document("listaTarefas").update(data);
+        }
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);
         binding.recycleView.adapter = ShoppingListAdapter(lista);
@@ -87,17 +98,9 @@ class ShoppingListActivity : AppCompatActivity() {
         lista.add(shop_item);
         count++;
 
-
-        //MANDA BASE DE DADOS
-        var data = mapOf(
-            shop_item.id.toString() to shop_item.nome
-        );
-
-        db.collection(userId).document("listaTarefas").update(data);
-
     }
 
-    fun removerItem(index : Int) {
+    fun removerItem(index : Int,userId: String) {
 
         //REMOVER DA LISTA
         var item = lista.get(index-1);
@@ -107,7 +110,7 @@ class ShoppingListActivity : AppCompatActivity() {
         itemRemoveFromDataBase(index.toString());
 
         //REORDENAR
-        verificar();
+        verificar(userId);
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);
         binding.recycleView.adapter = ShoppingListAdapter(lista);
@@ -153,15 +156,27 @@ class ShoppingListActivity : AppCompatActivity() {
             binding.recycleView.layoutManager = LinearLayoutManager(this);
             binding.recycleView.adapter = ShoppingListAdapter(lista);
 
-        },3000)
+        },1500)
 
     }
 
-    fun verificar(){
-
-        for(i in 0..lista.size-1){
+    //DA UM SET NO DOCUMENTO DA LISTA DE TAREFAS DE UMA MUTABLEMAP LISTA REAJUSTADA
+    fun verificar(userId : String)
+    {
+        for(i in 0..lista.size-1)
+        {
             lista.get(i).id = lista.indexOf(lista.get(i)).toString().toInt() +1;
         }
+
+        var listaItensBaseDadosReorganizados = mutableMapOf<String, Any>()
+
+        for(item in lista)
+        {
+            listaItensBaseDadosReorganizados.put(item.id.toString(),item.nome);
+        }
+
+        db.collection(userId).document("listaTarefas").set(listaItensBaseDadosReorganizados);
+
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);
         binding.recycleView.adapter = ShoppingListAdapter(lista);

@@ -35,6 +35,9 @@ class SignInActivity : AppCompatActivity() {
 
             auth.createUserWithEmailAndPassword(email,password)
                 .addOnSuccessListener {
+
+                    saveUser(email,password);
+
                     Toast.makeText(this, "Success! User Registered!", Toast.LENGTH_SHORT).show()
 
                     Handler(Looper.getMainLooper()).postDelayed({
@@ -48,6 +51,27 @@ class SignInActivity : AppCompatActivity() {
                 }
 
         }
+    }
+
+    fun saveUser(email : String,password : String)
+    {
+        val uid = auth.currentUser?.uid;
+
+        val data = mapOf(
+            "email" to email,
+            "password" to password
+        )
+
+        db.collection(uid.toString())
+            .document("DadosUser")
+            .set(data)
+            .addOnSuccessListener{
+
+            }
+            .addOnFailureListener {
+
+            }
+
     }
 
 
