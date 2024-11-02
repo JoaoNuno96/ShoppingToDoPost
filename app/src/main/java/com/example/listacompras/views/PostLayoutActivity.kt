@@ -123,7 +123,6 @@ class PostLayoutActivity : AppCompatActivity() {
 
     fun addPostFromDataBase(userParam : String, emailParam : String, tituloParam : String, textParam : String)
     {
-
         var post = Post(count,userParam,emailParam,tituloParam,textParam);
         listaPost.add(post);
         count++;
