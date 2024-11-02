@@ -79,11 +79,11 @@ class ShoppingListActivity : AppCompatActivity() {
 
         if(lista.size == 1)
         {
-            db.collection(userId).document("listaTarefas").set(data);
+            db.collection(userId).document("listaCompras").set(data);
         }
         else
         {
-            db.collection(userId).document("listaTarefas").update(data);
+            db.collection(userId).document("listaCompras").update(data);
         }
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);
@@ -91,7 +91,7 @@ class ShoppingListActivity : AppCompatActivity() {
 
     }
 
-    private fun adicionarItemsRecuperadosDeDB(item : String, userId : String)
+    private fun adicionarItemsRecuperadosDeDB(item : String)
     {
         //ADICIONAR LISTA
         val shop_item = ShoppingItem(count,item)
@@ -121,7 +121,7 @@ class ShoppingListActivity : AppCompatActivity() {
     {
         val userId = auth.currentUser?.uid;
 
-        val documentRef = db.collection(userId.toString()).document("listaTarefas");
+        val documentRef = db.collection(userId.toString()).document("listaCompras");
 
         var removesDatas = hashMapOf<String,Any>(
             userData to FieldValue.delete(),
@@ -137,20 +137,23 @@ class ShoppingListActivity : AppCompatActivity() {
     {
         val userId = auth.currentUser?.uid;
 
-        db.collection(userId.toString()).document("listaTarefas").get()
+        db.collection(userId.toString()).document("listaCompras").get()
             .addOnSuccessListener {
 
                 recover = it.getData();
-//                Thread.sleep(4000);
-
-                recover?.forEach { entry ->
-
-                    adicionarItemsRecuperadosDeDB(entry.value.toString(),userId.toString());
+                if(recover == null)
+                {
+                    Toast.makeText(applicationContext, "Nenhuns items da Base de Dados ", Toast.LENGTH_SHORT).show()
                 }
-
+                else
+                {
+                    recover?.forEach { entry ->
+                        Toast.makeText(applicationContext, "Dados a carregar de base de dados...", Toast.LENGTH_SHORT).show()
+                        adicionarItemsRecuperadosDeDB(entry.value.toString());
+                    }
+                }
            }
 
-        Toast.makeText(applicationContext, "Dados a carregar de base de dados...", Toast.LENGTH_SHORT).show()
 
         Handler().postDelayed({
             binding.recycleView.layoutManager = LinearLayoutManager(this);
@@ -175,7 +178,7 @@ class ShoppingListActivity : AppCompatActivity() {
             listaItensBaseDadosReorganizados.put(item.id.toString(),item.nome);
         }
 
-        db.collection(userId).document("listaTarefas").set(listaItensBaseDadosReorganizados);
+        db.collection(userId).document("listaCompras").set(listaItensBaseDadosReorganizados);
 
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);

@@ -24,9 +24,14 @@ class LoginActivity : AppCompatActivity() {
         FirebaseFirestore.getInstance();
     }
 
+    public var recover : Map<String,Any>? = null;
+    public var user : String = "";
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
+
+        recoverUserName(auth.currentUser?.uid.toString());
 
         binding.loginBotao.setOnClickListener {
 
@@ -34,8 +39,14 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.userPasswordRecover.text.toString();
 
             auth.signInWithEmailAndPassword(email,password)
+
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Welcome User $email !!", Toast.LENGTH_SHORT).show();
+
+                    Handler().postDelayed({
+                        Toast.makeText(this, "Welcome ${user} !!", Toast.LENGTH_SHORT).show();
+
+                    },500)
+
 
                     Handler(Looper.getMainLooper()).postDelayed({
                         val intent = Intent(this,MainActivity::class.java);
@@ -52,5 +63,25 @@ class LoginActivity : AppCompatActivity() {
             var i = Intent(this,SignInActivity::class.java);
             startActivity(i);
         }
+    }
+
+    fun recoverUserName(userId : String)
+    {
+
+            db.collection(userId.toString()).document("DadosUser").get()
+                .addOnSuccessListener {
+
+                    recover = it.getData();
+
+                    recover?.forEach { entry ->
+
+
+                    if(entry.key.toString() == "nome")
+                    {
+                        user = entry.value.toString();
+                    }
+                    }
+
+                }
     }
 }

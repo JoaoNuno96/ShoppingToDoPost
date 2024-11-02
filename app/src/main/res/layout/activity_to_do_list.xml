@@ -282,7 +282,8 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Nova Tarefa"
-                android:textColorHint="@color/Melon"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:backgroundTint="@color/Melon"
 
                 />
@@ -323,8 +324,8 @@
                 android:hint="Remover Tarefa"
                 android:backgroundTint="@color/Melon"
                 android:layout_marginEnd="5dp"
-                android:textColorHint="@color/Melon"
-                android:textColorHighlight="@color/Melon"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 />
 
 

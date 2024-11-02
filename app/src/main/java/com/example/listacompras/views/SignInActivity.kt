@@ -30,13 +30,14 @@ class SignInActivity : AppCompatActivity() {
 
         binding.sign.setOnClickListener {
 
+            val name = binding.userNomeRecover.text.toString();
             val email = binding.userEmailRecover.text.toString();
             val password = binding.userPasswordRecover.text.toString();
 
             auth.createUserWithEmailAndPassword(email,password)
                 .addOnSuccessListener {
 
-                    saveUser(email,password);
+                    saveUser(name,email);
 
                     Toast.makeText(this, "Success! User Registered!", Toast.LENGTH_SHORT).show()
 
@@ -53,13 +54,13 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    fun saveUser(email : String,password : String)
+    fun saveUser(nome : String,email : String)
     {
         val uid = auth.currentUser?.uid;
 
         val data = mapOf(
+            "nome" to nome,
             "email" to email,
-            "password" to password
         )
 
         db.collection(uid.toString())
