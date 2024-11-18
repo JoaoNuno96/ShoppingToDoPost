@@ -19,6 +19,7 @@ class ShoppingListActivity : AppCompatActivity() {
         ActivityShoppingListBinding.inflate(layoutInflater);
     }
 
+
     private val auth by lazy{
         FirebaseAuth.getInstance();
     }
