@@ -2,6 +2,7 @@ package com.example.listacompras.views
 
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,6 +35,7 @@ class PostLayoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
+        hideStatusBar();
         loadData();
 
         binding.registerPostButton.setOnClickListener {
@@ -126,5 +128,11 @@ class PostLayoutActivity : AppCompatActivity() {
         var post = Post(count,userParam,emailParam,tituloParam,textParam);
         listaPost.add(post);
         count++;
+    }
+
+    fun hideStatusBar()
+    {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        actionBar?.hide();
     }
 }

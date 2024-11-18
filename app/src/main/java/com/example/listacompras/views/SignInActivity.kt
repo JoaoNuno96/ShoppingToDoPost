@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.listacompras.databinding.ActivitySignInBinding
@@ -27,6 +28,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
+        hideStatusBar();
 
         binding.sign.setOnClickListener {
 
@@ -72,7 +74,12 @@ class SignInActivity : AppCompatActivity() {
             .addOnFailureListener {
 
             }
+    }
 
+    fun hideStatusBar()
+    {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        actionBar?.hide();
     }
 
 

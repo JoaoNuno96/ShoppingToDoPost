@@ -47,9 +47,9 @@ class ToDoListActivity : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
+        hideStatusBar();
 
         loadData();
 
@@ -383,6 +383,12 @@ class ToDoListActivity : AppCompatActivity() {
 
 
         adapterParaListas();
+    }
+
+    fun hideStatusBar()
+    {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        actionBar?.hide();
     }
 
 

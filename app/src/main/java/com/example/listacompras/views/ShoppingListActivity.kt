@@ -2,6 +2,7 @@ package com.example.listacompras.views
 
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +34,7 @@ class ShoppingListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(binding.root);
+        hideStatusBar();
 
         val userId = auth.currentUser?.uid;
         loadData();
@@ -183,6 +185,12 @@ class ShoppingListActivity : AppCompatActivity() {
 
         binding.recycleView.layoutManager = LinearLayoutManager(this);
         binding.recycleView.adapter = ShoppingListAdapter(lista);
+    }
+
+    fun hideStatusBar()
+    {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        actionBar?.hide();
     }
 
 }
